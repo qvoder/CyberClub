@@ -1,0 +1,215 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>КИБЕРТЕКА</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="icon" href="img/icon.svg" type="image/png">
+    <link rel="stylesheet" href="css/bauman.css">
+</head>
+<body>
+    <section class="hero">
+        <div class="hero__container">
+            <div class="hero__content">
+                <div class="hero__header">
+                    <img src="img/icon.svg" alt="КИБЕРТЕКА" class="logo__img">
+                    <div class="hero__title-group">
+                        <h1 class="hero__title">КИБЕРТЕКА</h1>
+                        <span class="hero__subtitle">на БАУМАНСКОЙ</span>
+                    </div>
+                </div>
+                <ul class="hero__info-list">
+                    <li>Спартаковская улица 21</li>
+                    <li>Работаем круглосуточно!</li>
+                    <li>8 977 320 88 88</li>
+                </ul>
+                <button class="hero__btn" id="open-booking-btn">Забронировать!</button>
+            </div>
+        </div>
+    </section>
+    <section
+        class="zones zones--price-nav"
+        data-price-href="profbauman.html"
+        data-price-label="Перейти к тарифам — Бауманская"
+    >
+        <div class="zones__container">
+            <div class="zones__border-box">
+                <h2 class="zones__title">Разные зоны с разными условиями</h2>
+
+                <div class="zones__cards">
+                    <div class="zones-card">
+                        <p class="zones-card__subtitle">Игровой ПК и периферия</p>
+                        <h3 class="zones-card__title">Стандарт</h3>
+                        <div class="zones-card__image-wrapper zones-card__image-wrapper--pink">
+                            <img src="img/cr1.jpg" alt="Общая зона" class="zones-card__img">
+                        </div>
+                        <p class="zones-card__name">Общая Зона</p>
+                        <span class="zones-card__link">Подробнее →</span>
+                    </div>
+
+                    <div class="zones-card">
+                        <p class="zones-card__subtitle">Монитор больше + ПК мощнее</p>
+                        <h3 class="zones-card__title">Стандарт+</h3>
+                        <div class="zones-card__image-wrapper zones-card__image-wrapper--blue">
+                            <img src="img/cr2.jpg" alt="Лучшие места" class="zones-card__img">
+                        </div>
+                        <p class="zones-card__name">Лучшие Места</p>
+                        <span class="zones-card__link zones-card__link1">Подробнее →</span>
+                    </div>
+
+                    <div class="zones-card">
+                        <p class="zones-card__subtitle">На 5 или 10 мест + лучшие ПК</p>
+                        <h3 class="zones-card__title">BOOT CAMP</h3>
+                        <div class="zones-card__image-wrapper zones-card__image-wrapper--purple awa1">
+                            <img src="img/cr3.jpg" alt="Отдельная комната" class="zones-card__img">
+                        </div>
+                        <p class="zones-card__name">Отдельная комната</p>
+                        <span class="zones-card__link zones-card__link2 awa1">Подробнее →</span>
+                    </div>
+
+                    <div class="zones-card">
+                        <p class="zones-card__subtitle">Подписка PS+ и 2 геймпада</p>
+                        <h3 class="zones-card__title">Приставка</h3>
+                        <div class="zones-card__image-wrapper zones-card__image-wrapper--purple">
+                            <img src="img/cr4.jpg" alt="Диван + PS5" class="zones-card__img">
+                        </div>
+                        <p class="zones-card__name">Диван + PS5</p>
+                        <span class="zones-card__link zones-card__link2">Подробнее →</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <section class="gallery">
+    <div class="gallery__container-1920">
+        <div class="swiper gallery-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="img/b1.jpg" alt="1"></div>
+                <div class="swiper-slide"><img src="img/b3.jpg" alt="2"></div>
+                <div class="swiper-slide"><img src="img/b4.jpg" alt="3"></div>
+                <div class="swiper-slide"><img src="img/b5.jpg" alt="4"></div>
+                <div class="swiper-slide"><img src="img/b6.jpg" alt="5"></div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+</section>
+<section class="bronya"> 
+    <div class="booking-section-content">
+    <div class="booking-popup__content">
+      <div class="booking-popup__inner">
+        <h2 class="booking-popup__title">Забронируй место!</h2>
+        <form id="booking-form" class="booking-popup__form">
+          <div class="form__container">
+            <div class="form__firststroke">
+                <input type="text" placeholder="Имя" class="name">
+                <input type="date" placeholder="Дата" class="date">
+                <input type="time" placeholder="Время" class="time">
+            </div>
+            <div class="form__secondstroke">
+                <div class="secondstroke_placeholder">Количество гостей
+                <input class="number" type="number"  value="2" min="1" max="10"></div>
+            </div>
+            <div class="thirth__stroke">
+                <input type="tel" class="phonenumber" placeholder="Номер телефона">
+            </div>
+            <div class="fourth__stroke">
+                <textarea class="areaha" placeholder="Ваши пожелания" ></textarea>
+            </div>
+            <button type="submit" class="booking-popup__btn">Забронировать!</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="booking-popup__police">
+      <img src="img/armor.png" alt="Бронежилет" class="booking-popup__vest">
+      <img src="img/helmet.png" alt="Каска" class="booking-popup__helmet">
+    </div>
+</div>
+</section>
+<section class="offers">
+    <div class="offers__container">
+        <h2 class="offers__title">АКЦИИ И СКИДКИ НА ЛЮБОЙ ВКУС</h2>
+        
+        <div class="offers__row">
+            <div class="offers__col col-580">
+                <a href="#" class="offer-card card-580">
+                    <p class="offer-card__text">ПРОМОКОД CYBER</p>
+                    <span class="offer-card__link">Подробнее →</span>
+                </a>
+                <a href="#" class="offer-card card-580">
+                    <p class="offer-card__text">КИБЕРФИКАЦИЯ CS</p>
+                    <span class="offer-card__link">Хочу участвовать →</span>
+                </a>
+                <a href="#" class="offer-card card-580">
+                    <p class="offer-card__text">КИБЕРФИКАЦИЯ DOTA</p>
+                    <span class="offer-card__link">Хочу участвовать →</span>
+                </a>
+            </div>
+
+            <div class="offers__col col-460">
+                <a href="#" class="offer-card card-460">
+                    <p class="offer-card__text">СКИДКИ ПН-СРЕДА</p>
+                    <span class="offer-card__link">Забронировать →</span>
+                </a>
+                <a href="#" class="offer-card card-460">
+                    <p class="offer-card__text">ГРУППА ВК</p>
+                    <span class="offer-card__link">Перейти в группу →</span>
+                </a>
+            </div>
+
+            <div class="offers__col col-340">
+                <a href="#" class="offer-card card-340">
+                    <p class="offer-card__text">СНЕКИ И НАПИТКИ</p>
+                    <span class="offer-card__link">Подробнее →</span>
+                </a>
+                <a href="#" class="offer-card card-340">
+                    <p class="offer-card__text">ДР</p>
+                    <span class="offer-card__link">Забронировать →</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="contacts">
+    <div class="contacts__container">
+        <div class="contacts__row">
+        
+            <div class="contacts__info">
+                <h2 class="contacts__title">Как нас найти?</h2>
+            
+                <div class="contacts__metro-group">
+                    <p class="contacts__text contacts__metro">Метро Бауманская <span>●</span> 3 минуты пешком</p>
+                    <p class="contacts__text contacts__metro">Метро Красносельская <span>●</span> 14 минут пешком</p>
+                </div>
+                <div class="contacts__address-group">
+                    <p class="contacts__text">Адрес: Спартаковская 21</p>
+                    <p class="contacts__text">Телефон: +7 977 752 20 01</p>
+                </div>
+                <div class="contacts__collab-group">
+                    <p class="contacts__label">По вопросам сотрудничества</p>
+                    <p class="contacts__subtext">Коммерческие предложения можно направить в группу ВК или в Телеграм</p>
+                </div>
+                <button class="contacts__btn" onclick="openBookingPopup()">Забронировать!</button>
+            </div>
+            <div class="contacts__map" id="map">
+                </div>
+        </div>
+    </div>
+</section>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/slider.js"></script>
+    <link rel="stylesheet" href="components/booking-popup/booking-popup.css">
+    <script src="components/booking-popup/booking-popup.js"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    <script src="js/map2.js"></script>
+    <script src="js/zones-price-nav.js" defer></script>
+</body>
+</html>
+
