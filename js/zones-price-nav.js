@@ -1,6 +1,3 @@
-/**
- * Секция .zones с классом .zones--price-nav ведёт на страницу тарифов (data-price-href).
- */
 (function () {
     function init() {
         document.querySelectorAll('.zones.zones--price-nav').forEach(function (zone) {
