@@ -9,8 +9,94 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,600;0,900;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/profprice.css">
+    
+    <style>
+        .main-nav {
+            position: fixed;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 120px;
+            height: 500px;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: none;
+        }
+
+        .main-nav__list {
+            display: flex;
+            flex-direction: column;
+            gap: 48px;
+            pointer-events: auto;
+        }
+
+        .main-nav__link {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 28px;
+            line-height: 1;
+            color: rgba(255, 255, 255, 0.55);
+            text-decoration: none;
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            transition: all 0.3s ease;
+            text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .main-nav__link:hover {
+            color: #ffffff;
+            text-shadow: 0 0 20px #ffffff, 0 0 40px #a855f7;
+            transform: scale(1.08);
+        }
+
+        .main-nav__link.prices-active {
+            color: #ffffff;
+            font-weight: 700;
+            text-shadow: 0 0 25px #ffffff, 0 0 50px #ffffff, 0 0 80px #a855f7;
+        }
+
+        body {
+            padding-left: 120px;
+            background-color: #0a0a0a;
+        }
+
+        @media (max-width: 992px) {
+            .main-nav {
+                display: none;
+            }
+            body {
+                padding-left: 0;
+            }
+        }
+
+        @media (max-height: 700px) {
+            .main-nav {
+                height: auto;
+                max-height: 85vh;
+            }
+            .main-nav__list {
+                gap: 30px;
+            }
+            .main-nav__link {
+                font-size: 22px;
+            }
+        }
+    </style>
 </head>
 <body>
+
+    <nav class="main-nav">
+        <div class="main-nav__list">
+            <a href="bauman.html#glavnaya" class="main-nav__link">Главная</a>
+            <a href="bauman.html#zony" class="main-nav__link">Зоны</a>
+            <a href="#" class="main-nav__link prices-active">Цены</a>
+            <a href="bauman.html#foto" class="main-nav__link">Фото</a>
+            <a href="bauman.html#akcii" class="main-nav__link">Акции</a>
+            <a href="bauman.html#kontakty" class="main-nav__link">Контакты</a>
+        </div>
+    </nav>
 
     <section class="cyber-zone" onclick="window.location.href='baumanstandart.html';">
         <div class="cyber-zone__container">
@@ -37,7 +123,7 @@
                 </div>
             </div>
 
-            <div class="cyber-zone__section"  >
+            <div class="cyber-zone__section">
                 <h2 class="cyber-zone__subtitle cyber-zone__subtitle--tariffs">ТАРИФЫ И ЦЕНЫ</h2>
                 <div class="tariffs-layout">
                     
@@ -138,303 +224,307 @@
 
         </div>
     </section>
-    <section class="cyber-zone cyber-zone--plus" onclick="window.location.href='baumanstandartplus.html';" >
-    <div class="cyber-zone__container">
-        
-        <h1 class="cyber-zone__title">ЗОНА <span class="cyber-zone__title--accent">СТАНДАРТ+</span></h1>
-        
-        <div class="cyber-zone__section">
-            <h2 class="cyber-zone__subtitle">ХАРАКТЕРИСТИКИ</h2>
-            <div class="specs-grid">
-                <article class="spec-card">
-                    <div class="spec-card__inner">
-                        <span class="spec-card__label">процессор</span>
-                        <span class="spec-card__value">Intel Core-i7 10700K</span>
-                        <img src="img/price1.png" alt="" class="spec-card__img">
-                    </div>
-                </article>
-                <article class="spec-card"><div class="spec-card__inner"><span class="spec-card__label">видеокарта</span><span class="spec-card__value">GeForce RTX 2080</span><img src="img/price2.png" alt="" class="spec-card__img"></div></article>
-                <article class="spec-card"><div class="spec-card__inner"><span class="spec-card__label">память</span><span class="spec-card__value">DDR4 16GB</span><img src="img/price3.png" alt="" class="spec-card__img"></div></article>
-                <article class="spec-card"><div class="spec-card__inner"><span class="spec-card__label">накопитель</span><span class="spec-card__value">NVMe SSD</span><img src="img/price4.png" alt="" class="spec-card__img"></div></article>
-                <article class="spec-card"><div class="spec-card__inner"><span class="spec-card__label">монитор</span><span class="spec-card__value">32" 165Hz</span><img src="img/price5.png" alt="" class="spec-card__img"></div></article>
-                <article class="spec-card"><div class="spec-card__inner"><span class="spec-card__label">клавиатура</span><span class="spec-card__value">HyperX Alloy FPS PRO</span><img src="img/price6.png" alt="" class="spec-card__img"></div></article>
-                <article class="spec-card"><div class="spec-card__inner"><span class="spec-card__label">мышка</span><span class="spec-card__value">SteelSeries Rival 710</span><img src="img/price7.png" alt="" class="spec-card__img"></div></article>
-                <article class="spec-card"><div class="spec-card__inner"><span class="spec-card__label">наушники</span><span class="spec-card__value">HyperX Cloud Alpha</span><img src="img/price8.png" alt="" class="spec-card__img"></div></article>
-            </div>
-        </div>
 
-        <div class="cyber-zone__section">
-            <h2 class="cyber-zone__subtitle cyber-zone__subtitle--tariffs">ТАРИФЫ И ЦЕНЫ</h2>
-            <div class="tariffs-layout">
-                <div class="tariffs-grid">
-                    <article class="tariff-card">
-                        <div class="tariff-card__border tariff-card__border--plus">
-                            <h3 class="tariff-card__name">Тариф «1 Час»</h3>
-                            <p class="tariff-card__desc">Доступен 24/7</p>
-                            <div class="tariff-card__visual">
-                                <img src="img/Ellipse9.png" class="tariff-card__bg-circle" alt="">
-                                <img src="img/Ellipse1.png" class="tariff-card__overlay-circle tariff-card__overlay-circle--1" alt="">
-                            </div>
-                            <p class="tariff-card__benefit">Стандартный тариф</p>
-                            <p class="tariff-card__price">240 ₽</p>
-                        </div>
-                    </article>
-                    <article class="tariff-card">
-                        <div class="tariff-card__border tariff-card__border--plus">
-                            <h3 class="tariff-card__name">Тариф «3 Часа»</h3>
-                            <p class="tariff-card__desc">Доступен 24/7</p>
-                            <div class="tariff-card__visual"><img src="img/Ellipse9.png" class="tariff-card__bg-circle"><img src="img/Ellipse2.png" class="tariff-card__overlay-circle tariff-card__overlay-circle--2"></div>
-                            <p class="tariff-card__benefit">Выгода: Час = 165 ₽</p>
-                            <p class="tariff-card__price">490 ₽</p>
-                        </div>
-                    </article>
-                    <article class="tariff-card">
-                        <div class="tariff-card__border tariff-card__border--plus">
-                            <h3 class="tariff-card__name">Тариф «5 Часов»</h3>
-                            <p class="tariff-card__desc">Доступен 24/7</p>
-                            <div class="tariff-card__visual"><img src="img/Ellipse9.png" class="tariff-card__bg-circle"><img src="img/Ellipse3.png" class="tariff-card__overlay-circle tariff-card__overlay-circle--3"></div>
-                            <p class="tariff-card__benefit">Выгода: Час = 140 ₽</p>
-                            <p class="tariff-card__price">690 ₽</p>
-                        </div>
-                    </article>
-                    <article class="tariff-card">
-                        <div class="tariff-card__border tariff-card__border--plus">
-                            <h3 class="tariff-card__name">Тариф «7 Часов»</h3>
-                            <p class="tariff-card__desc">Доступен 24/7</p>
-                            <div class="tariff-card__visual"><img src="img/Ellipse9.png" class="tariff-card__bg-circle"><img src="img/Ellipse4.png" class="tariff-card__overlay-circle tariff-card__overlay-circle--4"></div>
-                            <p class="tariff-card__benefit">Выгода: Час = 115 ₽</p>
-                            <p class="tariff-card__price">790 ₽</p>
-                        </div>
-                    </article>
-                    <article class="tariff-card">
-                        <div class="tariff-card__border tariff-card__border--plus">
-                            <h3 class="tariff-card__name">Тариф «Ночь»</h3>
-                            <p class="tariff-card__desc">23:00 — 10:00</p>
-                            <div class="tariff-card__visual"><img src="img/Ellipse9.png" class="tariff-card__bg-circle"><img src="img/Ellipse5.png" class="tariff-card__overlay-circle tariff-card__overlay-circle--5"></div>
-                            <p class="tariff-card__benefit">Выгода: Час = 80 ₽</p>
-                            <p class="tariff-card__price">890 ₽</p>
-                        </div>
-                    </article>
-                    <article class="tariff-card">
-                        <div class="tariff-card__border tariff-card__border--plus">
-                            <h3 class="tariff-card__name">Тариф «День»</h3>
-                            <p class="tariff-card__desc">HyperX Alloy FPS PRO</p>
-                            <div class="tariff-card__visual">
-                                <img src="img/Ellipse9.png" class="tariff-card__bg-circle">
-                                <img src="img/Ellipse8.png" class="tariff-card__overlay-circle tariff-card__overlay-circle--6">
-                                <img src="img/elipse88.png" class="tariff-card__extra-icon tariff-card__extra-icon--sun">
-                            </div>
-                            <p class="tariff-card__benefit">Выгода: Час = 75 ₽</p>
-                            <p class="tariff-card__price">950 ₽</p>
-                        </div>
-                    </article>
-                </div>
-
-                <aside class="promos-sidebar">
-                    <div class="promo-item">
-                        <p class="promo-item__text">С понедельника по среду</p>
-                        <p class="promo-item__value vv--blue">СКИДКА 20%</p>
-                    </div>
-                    <div class="promo-item">
-                        <p class="promo-item__text">По утрам с 05:00 до 14:00</p>
-                        <p class="promo-item__value vv--blue">СКИДКА 40%</p>
-                    </div>
-                </aside>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="cyber-zone cyber-zone--bootcamp" onclick="window.location.href='baumanBoot.html';">
-    <div class="cyber-zone__container">
-        
-        <h1 class="cyber-zone__title">ЗОНА <span class="cyber-zone__title--accent">BOOT CAMP</span></h1>
-        
-        <div class="cyber-zone__section">
-            <h2 class="cyber-zone__subtitle">ХАРАКТЕРИСТИКИ</h2>
-            <div class="specs-grid">
-                <article class="spec-card">
-                    <div class="spec-card__inner">
-                        <span class="spec-card__label">процессор</span>
-                        <span class="spec-card__value">Intel Core-i5 10600K</span>
-                        <img src="img/price1.png" alt="" class="spec-card__img">
-                    </div>
-                </article>
-                <article class="spec-card"><div class="spec-card__inner"><span class="spec-card__label">видеокарта</span><span class="spec-card__value">Geforce 2060 6Gb</span><img src="img/price2.png" alt="" class="spec-card__img"></div></article>
-                <article class="spec-card"><div class="spec-card__inner"><span class="spec-card__label">память</span><span class="spec-card__value">DDR4 16GB</span><img src="img/price3.png" alt="" class="spec-card__img"></div></article>
-                <article class="spec-card"><div class="spec-card__inner"><span class="spec-card__label">накопитель</span><span class="spec-card__value">NVMe SSD</span><img src="img/price4.png" alt="" class="spec-card__img"></div></article>
-                <article class="spec-card"><div class="spec-card__inner"><span class="spec-card__label">монитор</span><span class="spec-card__value">27" 240Hz</span><img src="img/price5.png" alt="" class="spec-card__img"></div></article>
-                <article class="spec-card"><div class="spec-card__inner"><span class="spec-card__label">клавиатура</span><span class="spec-card__value">HyperX Alloy FPS PRO</span><img src="img/price6.png" alt="" class="spec-card__img"></div></article>
-                <article class="spec-card"><div class="spec-card__inner"><span class="spec-card__label">мышка</span><span class="spec-card__value">SteelSeries Rival 710</span><img src="img/price7.png" alt="" class="spec-card__img"></div></article>
-                <article class="spec-card"><div class="spec-card__inner"><span class="spec-card__label">наушники</span><span class="spec-card__value">HyperX Cloud Alpha</span><img src="img/price8.png" alt="" class="spec-card__img"></div></article>
-            </div>
-        </div>
-
-        <div class="cyber-zone__section">
-            <h2 class="cyber-zone__subtitle cyber-zone__subtitle--tariffs">ТАРИФЫ И ЦЕНЫ</h2>
-            <div class="tariffs-layout">
-                <div class="tariffs-grid">
-                    <article class="tariff-card">
-                        <div class="tariff-card__border tariff-card__border--bootcamp">
-                            <h3 class="tariff-card__name">Тариф «1 Час»</h3>
-                            <p class="tariff-card__desc">Доступен 24/7</p>
-                            <div class="tariff-card__visual">
-                                <img src="img/Ellipse9.png" class="tariff-card__bg-circle" alt="">
-                                <img src="img/Ellipse1.png" class="tariff-card__overlay-circle tariff-card__overlay-circle--1" alt="">
-                            </div>
-                            <p class="tariff-card__benefit">Стандартный тариф</p>
-                            <p class="tariff-card__price">140 ₽</p>
-                        </div>
-                    </article>
-                    <article class="tariff-card">
-                        <div class="tariff-card__border tariff-card__border--bootcamp">
-                            <h3 class="tariff-card__name">Тариф «3 Часа»</h3>
-                            <p class="tariff-card__desc">Доступен 24/7</p>
-                            <div class="tariff-card__visual"><img src="img/Ellipse9.png" class="tariff-card__bg-circle"><img src="img/Ellipse2.png" class="tariff-card__overlay-circle tariff-card__overlay-circle--2"></div>
-                            <p class="tariff-card__benefit">Выгода: Час = 130 ₽</p>
-                            <p class="tariff-card__price">390 ₽</p>
-                        </div>
-                    </article>
-                    <article class="tariff-card">
-                        <div class="tariff-card__border tariff-card__border--bootcamp">
-                            <h3 class="tariff-card__name">Тариф «5 Часов»</h3>
-                            <p class="tariff-card__desc">Доступен 24/7</p>
-                            <div class="tariff-card__visual"><img src="img/Ellipse9.png" class="tariff-card__bg-circle"><img src="img/Ellipse3.png" class="tariff-card__overlay-circle tariff-card__overlay-circle--3"></div>
-                            <p class="tariff-card__benefit">Выгода: Час = 100 ₽</p>
-                            <p class="tariff-card__price">490 ₽</p>
-                        </div>
-                    </article>
-                    <article class="tariff-card">
-                        <div class="tariff-card__border tariff-card__border--bootcamp">
-                            <h3 class="tariff-card__name">Тариф «7 Часов»</h3>
-                            <p class="tariff-card__desc">Доступен 24/7</p>
-                            <div class="tariff-card__visual"><img src="img/Ellipse9.png" class="tariff-card__bg-circle"><img src="img/Ellipse4.png" class="tariff-card__overlay-circle tariff-card__overlay-circle--4"></div>
-                            <p class="tariff-card__benefit">Выгода: Час = 85 ₽</p>
-                            <p class="tariff-card__price">590 ₽</p>
-                        </div>
-                    </article>
-                    <article class="tariff-card">
-                        <div class="tariff-card__border tariff-card__border--bootcamp">
-                            <h3 class="tariff-card__name">Тариф «Ночь»</h3>
-                            <p class="tariff-card__desc">23:00 — 10:00</p>
-                            <div class="tariff-card__visual"><img src="img/Ellipse9.png" class="tariff-card__bg-circle"><img src="img/Ellipse5.png" class="tariff-card__overlay-circle tariff-card__overlay-circle--5"></div>
-                            <p class="tariff-card__benefit">Выгода: Час = 65 ₽</p>
-                            <p class="tariff-card__price">690 ₽</p>
-                        </div>
-                    </article>
-                    <article class="tariff-card">
-                        <div class="tariff-card__border tariff-card__border--bootcamp">
-                            <h3 class="tariff-card__name">Тариф «День»</h3>
-                            <p class="tariff-card__desc">10:00 — 23:00</p>
-                            <div class="tariff-card__visual">
-                                <img src="img/Ellipse9.png" class="tariff-card__bg-circle">
-                                <img src="img/Ellipse8.png" class="tariff-card__overlay-circle tariff-card__overlay-circle--6">
-                                <img src="img/elipse88.png" class="tariff-card__extra-icon tariff-card__extra-icon--sun">
-                            </div>
-                            <p class="tariff-card__benefit">Выгода: Час = 60 ₽</p>
-                            <p class="tariff-card__price">790 ₽</p>
-                        </div>
-                    </article>
-                </div>
-
-                <aside class="promos-sidebar">
-                    <div class="promo-item">
-                        <p class="promo-item__text">С понедельника по среду</p>
-                        <p class="promo-item__value vv--red">СКИДКА 20%</p>
-                    </div>
-                    <div class="promo-item">
-                        <p class="promo-item__text">По утрам с 05:00 до 14:00</p>
-                        <p class="promo-item__value vv--red">СКИДКА 40%</p>
-                    </div>
-                </aside>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="ps5-section">
-    <div class="ps5-main-container">
-        <div class="ps5-left-box">
-            <h1 class="cyber-zone__title">ЗОНА <span class="ps5-zone__title-accent">PS5</span></h1>
+    <section class="cyber-zone cyber-zone--plus" onclick="window.location.href='baumanstandartplus.html';">
+        <div class="cyber-zone__container">
+            
+            <h1 class="cyber-zone__title">ЗОНА <span class="cyber-zone__title--accent">СТАНДАРТ+</span></h1>
+            
             <div class="cyber-zone__section">
-                <h2 class="cyber-zone__subtitle ps5-zone__tariffs-heading">ТАРИФЫ И ЦЕНЫ</h2>
-                <div class="tariffs-grid tariffs-grid--ps5-trio">
-                    <article class="tariff-card">
-                        <div class="tariff-card__border tariff-card__border--ps5-1">
-                            <h3 class="tariff-card__name">Тариф «1 Час»</h3>
-                            <p class="tariff-card__desc">Доступен 24/7</p>
-                            <div class="tariff-card__visual">
-                                <img src="img/Ellipse9.png" class="tariff-card__bg-circle" alt="">
-                                <img src="img/Ellipse1.png" class="tariff-card__overlay-circle tariff-card__overlay-circle--1" alt="">
-                            </div>
-                            <p class="tariff-card__benefit">Стандартный тариф</p>
-                            <p class="tariff-card__price">240 ₽</p>
+                <h2 class="cyber-zone__subtitle">ХАРАКТЕРИСТИКИ</h2>
+                <div class="specs-grid">
+                    <article class="spec-card">
+                        <div class="spec-card__inner">
+                            <span class="spec-card__label">процессор</span>
+                            <span class="spec-card__value">Intel Core-i7 10700K</span>
+                            <img src="img/price1.png" alt="" class="spec-card__img">
                         </div>
                     </article>
-                    <article class="tariff-card">
-                        <div class="tariff-card__border tariff-card__border--ps5-2">
-                            <h3 class="tariff-card__name">Тариф «3 Часа»</h3>
-                            <p class="tariff-card__desc">Доступен 24/7</p>
-                            <div class="tariff-card__visual">
-                                <img src="img/Ellipse9.png" class="tariff-card__bg-circle" alt="">
-                                <img src="img/Ellipse2.png" class="tariff-card__overlay-circle tariff-card__overlay-circle--2" alt="">
-                            </div>
-                            <p class="tariff-card__benefit">Выгода: Час = 200 ₽</p>
-                            <p class="tariff-card__price">600 ₽</p>
-                        </div>
-                    </article>
-                    <article class="tariff-card">
-                        <div class="tariff-card__border tariff-card__border--ps5-3">
-                            <h3 class="tariff-card__name">Тариф «Ночь»</h3>
-                            <p class="tariff-card__desc">23:00 — 10:00</p>
-                            <div class="tariff-card__visual">
-                                <img src="img/Ellipse9.png" class="tariff-card__bg-circle" alt="">
-                                <img src="img/Ellipse5.png" class="tariff-card__overlay-circle tariff-card__overlay-circle--5" alt="">
-                            </div>
-                            <p class="tariff-card__benefit">Выгода: Час = 100 ₽</p>
-                            <p class="tariff-card__price">1100 ₽</p>
-                        </div>
-                    </article>
+                    <article class="spec-card"><div class="spec-card__inner"><span class="spec-card__label">видеокарта</span><span class="spec-card__value">GeForce RTX 2080</span><img src="img/price2.png" alt="" class="spec-card__img"></div></article>
+                    <article class="spec-card"><div class="spec-card__inner"><span class="spec-card__label">память</span><span class="spec-card__value">DDR4 16GB</span><img src="img/price3.png" alt="" class="spec-card__img"></div></article>
+                    <article class="spec-card"><div class="spec-card__inner"><span class="spec-card__label">накопитель</span><span class="spec-card__value">NVMe SSD</span><img src="img/price4.png" alt="" class="spec-card__img"></div></article>
+                    <article class="spec-card"><div class="spec-card__inner"><span class="spec-card__label">монитор</span><span class="spec-card__value">32" 165Hz</span><img src="img/price5.png" alt="" class="spec-card__img"></div></article>
+                    <article class="spec-card"><div class="spec-card__inner"><span class="spec-card__label">клавиатура</span><span class="spec-card__value">HyperX Alloy FPS PRO</span><img src="img/price6.png" alt="" class="spec-card__img"></div></article>
+                    <article class="spec-card"><div class="spec-card__inner"><span class="spec-card__label">мышка</span><span class="spec-card__value">SteelSeries Rival 710</span><img src="img/price7.png" alt="" class="spec-card__img"></div></article>
+                    <article class="spec-card"><div class="spec-card__inner"><span class="spec-card__label">наушники</span><span class="spec-card__value">HyperX Cloud Alpha</span><img src="img/price8.png" alt="" class="spec-card__img"></div></article>
                 </div>
             </div>
-        </div>
 
-        <div class="ps5-right-box">
-            <div class="ps5-new-form">
-                <div class="form-inner-border">
-                    <h2 class="ps5-form-title">Забронируй место!</h2>
-                    <form class="booking-popup__form">
-                        <div class="form__firststroke">
-                            <input type="text" placeholder="Имя" class="name">
-                            <input type="date" class="date">
-                            <input type="time" class="time">
-                        </div>
-                        <div class="form__secondstroke">
-                            <div class="secondstroke_placeholder">
-                                <span>Количество гостей</span>
-                                <input class="number" type="number" value="2" min="1" max="10">
+            <div class="cyber-zone__section">
+                <h2 class="cyber-zone__subtitle cyber-zone__subtitle--tariffs">ТАРИФЫ И ЦЕНЫ</h2>
+                <div class="tariffs-layout">
+                    <div class="tariffs-grid">
+                        <article class="tariff-card">
+                            <div class="tariff-card__border tariff-card__border--plus">
+                                <h3 class="tariff-card__name">Тариф «1 Час»</h3>
+                                <p class="tariff-card__desc">Доступен 24/7</p>
+                                <div class="tariff-card__visual">
+                                    <img src="img/Ellipse9.png" class="tariff-card__bg-circle" alt="">
+                                    <img src="img/Ellipse1.png" class="tariff-card__overlay-circle tariff-card__overlay-circle--1" alt="">
+                                </div>
+                                <p class="tariff-card__benefit">Стандартный тариф</p>
+                                <p class="tariff-card__price">240 ₽</p>
                             </div>
+                        </article>
+                        <article class="tariff-card">
+                            <div class="tariff-card__border tariff-card__border--plus">
+                                <h3 class="tariff-card__name">Тариф «3 Часа»</h3>
+                                <p class="tariff-card__desc">Доступен 24/7</p>
+                                <div class="tariff-card__visual"><img src="img/Ellipse9.png" class="tariff-card__bg-circle"><img src="img/Ellipse2.png" class="tariff-card__overlay-circle tariff-card__overlay-circle--2"></div>
+                                <p class="tariff-card__benefit">Выгода: Час = 165 ₽</p>
+                                <p class="tariff-card__price">490 ₽</p>
+                            </div>
+                        </article>
+                        <article class="tariff-card">
+                            <div class="tariff-card__border tariff-card__border--plus">
+                                <h3 class="tariff-card__name">Тариф «5 Часов»</h3>
+                                <p class="tariff-card__desc">Доступен 24/7</p>
+                                <div class="tariff-card__visual"><img src="img/Ellipse9.png" class="tariff-card__bg-circle"><img src="img/Ellipse3.png" class="tariff-card__overlay-circle tariff-card__overlay-circle--3"></div>
+                                <p class="tariff-card__benefit">Выгода: Час = 140 ₽</p>
+                                <p class="tariff-card__price">690 ₽</p>
+                            </div>
+                        </article>
+                        <article class="tariff-card">
+                            <div class="tariff-card__border tariff-card__border--plus">
+                                <h3 class="tariff-card__name">Тариф «7 Часов»</h3>
+                                <p class="tariff-card__desc">Доступен 24/7</p>
+                                <div class="tariff-card__visual"><img src="img/Ellipse9.png" class="tariff-card__bg-circle"><img src="img/Ellipse4.png" class="tariff-card__overlay-circle tariff-card__overlay-circle--4"></div>
+                                <p class="tariff-card__benefit">Выгода: Час = 115 ₽</p>
+                                <p class="tariff-card__price">790 ₽</p>
+                            </div>
+                        </article>
+                        <article class="tariff-card">
+                            <div class="tariff-card__border tariff-card__border--plus">
+                                <h3 class="tariff-card__name">Тариф «Ночь»</h3>
+                                <p class="tariff-card__desc">23:00 — 10:00</p>
+                                <div class="tariff-card__visual"><img src="img/Ellipse9.png" class="tariff-card__bg-circle"><img src="img/Ellipse5.png" class="tariff-card__overlay-circle tariff-card__overlay-circle--5"></div>
+                                <p class="tariff-card__benefit">Выгода: Час = 80 ₽</p>
+                                <p class="tariff-card__price">890 ₽</p>
+                            </div>
+                        </article>
+                        <article class="tariff-card">
+                            <div class="tariff-card__border tariff-card__border--plus">
+                                <h3 class="tariff-card__name">Тариф «День»</h3>
+                                <p class="tariff-card__desc">HyperX Alloy FPS PRO</p>
+                                <div class="tariff-card__visual">
+                                    <img src="img/Ellipse9.png" class="tariff-card__bg-circle">
+                                    <img src="img/Ellipse8.png" class="tariff-card__overlay-circle tariff-card__overlay-circle--6">
+                                    <img src="img/elipse88.png" class="tariff-card__extra-icon tariff-card__extra-icon--sun">
+                                </div>
+                                <p class="tariff-card__benefit">Выгода: Час = 75 ₽</p>
+                                <p class="tariff-card__price">950 ₽</p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <aside class="promos-sidebar">
+                        <div class="promo-item">
+                            <p class="promo-item__text">С понедельника по среду</p>
+                            <p class="promo-item__value vv--blue">СКИДКА 20%</p>
                         </div>
-                        <div class="thirth__stroke">
-                            <input type="tel" class="phonenumber" placeholder="Номер телефона">
+                        <div class="promo-item">
+                            <p class="promo-item__text">По утрам с 05:00 до 14:00</p>
+                            <p class="promo-item__value vv--blue">СКИДКА 40%</p>
                         </div>
-                        <div class="fourth__stroke">
-                            <textarea class="areaha" placeholder="Ваши пожелания, например зона и номер ПК"></textarea>
-                        </div>
-                        <button type="submit" class="booking-popup__btn">Забронировать!</button>
-                    </form>
-                </div>
-                <div class="ps5-police-container">
-                    <img src="img/armor.png" class="ps5-armor">
-                    <img src="img/helmet.png" class="ps5-helmet">
+                    </aside>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-<section class="map-section">
-    <div class="container">
-        <h2 class="section-title section-title_last">КАРТА КЛУБА</h2>
-        <div class="map-flex">
-            <div class="map-wrapper">
+    </section>
+
+    <section class="cyber-zone cyber-zone--bootcamp" onclick="window.location.href='baumanBoot.html';">
+        <div class="cyber-zone__container">
+            
+            <h1 class="cyber-zone__title">ЗОНА <span class="cyber-zone__title--accent">BOOT CAMP</span></h1>
+            
+            <div class="cyber-zone__section">
+                <h2 class="cyber-zone__subtitle">ХАРАКТЕРИСТИКИ</h2>
+                <div class="specs-grid">
+                    <article class="spec-card">
+                        <div class="spec-card__inner">
+                            <span class="spec-card__label">процессор</span>
+                            <span class="spec-card__value">Intel Core-i5 10600K</span>
+                            <img src="img/price1.png" alt="" class="spec-card__img">
+                        </div>
+                    </article>
+                    <article class="spec-card"><div class="spec-card__inner"><span class="spec-card__label">видеокарта</span><span class="spec-card__value">Geforce 2060 6Gb</span><img src="img/price2.png" alt="" class="spec-card__img"></div></article>
+                    <article class="spec-card"><div class="spec-card__inner"><span class="spec-card__label">память</span><span class="spec-card__value">DDR4 16GB</span><img src="img/price3.png" alt="" class="spec-card__img"></div></article>
+                    <article class="spec-card"><div class="spec-card__inner"><span class="spec-card__label">накопитель</span><span class="spec-card__value">NVMe SSD</span><img src="img/price4.png" alt="" class="spec-card__img"></div></article>
+                    <article class="spec-card"><div class="spec-card__inner"><span class="spec-card__label">монитор</span><span class="spec-card__value">27" 240Hz</span><img src="img/price5.png" alt="" class="spec-card__img"></div></article>
+                    <article class="spec-card"><div class="spec-card__inner"><span class="spec-card__label">клавиатура</span><span class="spec-card__value">HyperX Alloy FPS PRO</span><img src="img/price6.png" alt="" class="spec-card__img"></div></article>
+                    <article class="spec-card"><div class="spec-card__inner"><span class="spec-card__label">мышка</span><span class="spec-card__value">SteelSeries Rival 710</span><img src="img/price7.png" alt="" class="spec-card__img"></div></article>
+                    <article class="spec-card"><div class="spec-card__inner"><span class="spec-card__label">наушники</span><span class="spec-card__value">HyperX Cloud Alpha</span><img src="img/price8.png" alt="" class="spec-card__img"></div></article>
+                </div>
+            </div>
+
+            <div class="cyber-zone__section">
+                <h2 class="cyber-zone__subtitle cyber-zone__subtitle--tariffs">ТАРИФЫ И ЦЕНЫ</h2>
+                <div class="tariffs-layout">
+                    <div class="tariffs-grid">
+                        <article class="tariff-card">
+                            <div class="tariff-card__border tariff-card__border--bootcamp">
+                                <h3 class="tariff-card__name">Тариф «1 Час»</h3>
+                                <p class="tariff-card__desc">Доступен 24/7</p>
+                                <div class="tariff-card__visual">
+                                    <img src="img/Ellipse9.png" class="tariff-card__bg-circle" alt="">
+                                    <img src="img/Ellipse1.png" class="tariff-card__overlay-circle tariff-card__overlay-circle--1" alt="">
+                                </div>
+                                <p class="tariff-card__benefit">Стандартный тариф</p>
+                                <p class="tariff-card__price">140 ₽</p>
+                            </div>
+                        </article>
+                        <article class="tariff-card">
+                            <div class="tariff-card__border tariff-card__border--bootcamp">
+                                <h3 class="tariff-card__name">Тариф «3 Часа»</h3>
+                                <p class="tariff-card__desc">Доступен 24/7</p>
+                                <div class="tariff-card__visual"><img src="img/Ellipse9.png" class="tariff-card__bg-circle"><img src="img/Ellipse2.png" class="tariff-card__overlay-circle tariff-card__overlay-circle--2"></div>
+                                <p class="tariff-card__benefit">Выгода: Час = 130 ₽</p>
+                                <p class="tariff-card__price">390 ₽</p>
+                            </div>
+                        </article>
+                        <article class="tariff-card">
+                            <div class="tariff-card__border tariff-card__border--bootcamp">
+                                <h3 class="tariff-card__name">Тариф «5 Часов»</h3>
+                                <p class="tariff-card__desc">Доступен 24/7</p>
+                                <div class="tariff-card__visual"><img src="img/Ellipse9.png" class="tariff-card__bg-circle"><img src="img/Ellipse3.png" class="tariff-card__overlay-circle tariff-card__overlay-circle--3"></div>
+                                <p class="tariff-card__benefit">Выгода: Час = 100 ₽</p>
+                                <p class="tariff-card__price">490 ₽</p>
+                            </div>
+                        </article>
+                        <article class="tariff-card">
+                            <div class="tariff-card__border tariff-card__border--bootcamp">
+                                <h3 class="tariff-card__name">Тариф «7 Часов»</h3>
+                                <p class="tariff-card__desc">Доступен 24/7</p>
+                                <div class="tariff-card__visual"><img src="img/Ellipse9.png" class="tariff-card__bg-circle"><img src="img/Ellipse4.png" class="tariff-card__overlay-circle tariff-card__overlay-circle--4"></div>
+                                <p class="tariff-card__benefit">Выгода: Час = 85 ₽</p>
+                                <p class="tariff-card__price">590 ₽</p>
+                            </div>
+                        </article>
+                        <article class="tariff-card">
+                            <div class="tariff-card__border tariff-card__border--bootcamp">
+                                <h3 class="tariff-card__name">Тариф «Ночь»</h3>
+                                <p class="tariff-card__desc">23:00 — 10:00</p>
+                                <div class="tariff-card__visual"><img src="img/Ellipse9.png" class="tariff-card__bg-circle"><img src="img/Ellipse5.png" class="tariff-card__overlay-circle tariff-card__overlay-circle--5"></div>
+                                <p class="tariff-card__benefit">Выгода: Час = 65 ₽</p>
+                                <p class="tariff-card__price">690 ₽</p>
+                            </div>
+                        </article>
+                        <article class="tariff-card">
+                            <div class="tariff-card__border tariff-card__border--bootcamp">
+                                <h3 class="tariff-card__name">Тариф «День»</h3>
+                                <p class="tariff-card__desc">10:00 — 23:00</p>
+                                <div class="tariff-card__visual">
+                                    <img src="img/Ellipse9.png" class="tariff-card__bg-circle">
+                                    <img src="img/Ellipse8.png" class="tariff-card__overlay-circle tariff-card__overlay-circle--6">
+                                    <img src="img/elipse88.png" class="tariff-card__extra-icon tariff-card__extra-icon--sun">
+                                </div>
+                                <p class="tariff-card__benefit">Выгода: Час = 60 ₽</p>
+                                <p class="tariff-card__price">790 ₽</p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <aside class="promos-sidebar">
+                        <div class="promo-item">
+                            <p class="promo-item__text">С понедельника по среду</p>
+                            <p class="promo-item__value vv--red">СКИДКА 20%</p>
+                        </div>
+                        <div class="promo-item">
+                            <p class="promo-item__text">По утрам с 05:00 до 14:00</p>
+                            <p class="promo-item__value vv--red">СКИДКА 40%</p>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ps5-section">
+        <div class="ps5-main-container">
+            <div class="ps5-left-box">
+                <h1 class="cyber-zone__title">ЗОНА <span class="ps5-zone__title-accent">PS5</span></h1>
+                <div class="cyber-zone__section">
+                    <h2 class="cyber-zone__subtitle ps5-zone__tariffs-heading">ТАРИФЫ И ЦЕНЫ</h2>
+                    <div class="tariffs-grid tariffs-grid--ps5-trio">
+                        <article class="tariff-card">
+                            <div class="tariff-card__border tariff-card__border--ps5-1">
+                                <h3 class="tariff-card__name">Тариф «1 Час»</h3>
+                                <p class="tariff-card__desc">Доступен 24/7</p>
+                                <div class="tariff-card__visual">
+                                    <img src="img/Ellipse9.png" class="tariff-card__bg-circle" alt="">
+                                    <img src="img/Ellipse1.png" class="tariff-card__overlay-circle tariff-card__overlay-circle--1" alt="">
+                                </div>
+                                <p class="tariff-card__benefit">Стандартный тариф</p>
+                                <p class="tariff-card__price">240 ₽</p>
+                            </div>
+                        </article>
+                        <article class="tariff-card">
+                            <div class="tariff-card__border tariff-card__border--ps5-2">
+                                <h3 class="tariff-card__name">Тариф «3 Часа»</h3>
+                                <p class="tariff-card__desc">Доступен 24/7</p>
+                                <div class="tariff-card__visual">
+                                    <img src="img/Ellipse9.png" class="tariff-card__bg-circle" alt="">
+                                    <img src="img/Ellipse2.png" class="tariff-card__overlay-circle tariff-card__overlay-circle--2" alt="">
+                                </div>
+                                <p class="tariff-card__benefit">Выгода: Час = 200 ₽</p>
+                                <p class="tariff-card__price">600 ₽</p>
+                            </div>
+                        </article>
+                        <article class="tariff-card">
+                            <div class="tariff-card__border tariff-card__border--ps5-3">
+                                <h3 class="tariff-card__name">Тариф «Ночь»</h3>
+                                <p class="tariff-card__desc">23:00 — 10:00</p>
+                                <div class="tariff-card__visual">
+                                    <img src="img/Ellipse9.png" class="tariff-card__bg-circle" alt="">
+                                    <img src="img/Ellipse5.png" class="tariff-card__overlay-circle tariff-card__overlay-circle--5" alt="">
+                                </div>
+                                <p class="tariff-card__benefit">Выгода: Час = 100 ₽</p>
+                                <p class="tariff-card__price">1100 ₽</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ps5-right-box">
+                <div class="ps5-new-form">
+                    <div class="form-inner-border">
+                        <h2 class="ps5-form-title">Забронируй место!</h2>
+                        <form class="booking-popup__form">
+                            <div class="form__firststroke">
+                                <input type="text" placeholder="Имя" class="name">
+                                <input type="date" class="date">
+                                <input type="time" class="time">
+                            </div>
+                            <div class="form__secondstroke">
+                                <div class="secondstroke_placeholder">
+                                    <span>Количество гостей</span>
+                                    <input class="number" type="number" value="2" min="1" max="10">
+                                </div>
+                            </div>
+                            <div class="thirth__stroke">
+                                <input type="tel" class="phonenumber" placeholder="Номер телефона">
+                            </div>
+                            <div class="fourth__stroke">
+                                <textarea class="areaha" placeholder="Ваши пожелания, например зона и номер ПК"></textarea>
+                            </div>
+                            <button type="submit" class="booking-popup__btn">Забронировать!</button>
+                        </form>
+                    </div>
+                    <div class="ps5-police-container">
+                        <img src="img/armor.png" class="ps5-armor">
+                        <img src="img/helmet.png" class="ps5-helmet">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="map-section">
+        <div class="container">
+            <h2 class="section-title section-title_last">КАРТА КЛУБА</h2>
+            <div class="map-flex">
+                <div class="map-wrapper">
 
 <svg id="interactive-map" width="1320" height="618" viewBox="0 0 1320 618" fill="none" xmlns="http://www.w3.org/2000/svg" width="100%" 
         height="auto"
@@ -564,33 +654,32 @@
 </svg>
 
 
-            <div id="map-tooltip" class="map-tooltip">
-                    <div class="tooltip-content">
-                        <img src="" alt="Фото зоны" id="tooltip-img">
-                        <span id="tooltip-number"></span>
+             <div id="map-tooltip" class="map-tooltip">
+                        <div class="tooltip-content">
+                            <img src="" alt="Фото зоны" id="tooltip-img">
+                            <span id="tooltip-number"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="legend">
+                    <div class="legend-item">
+                        <div class="legend-color pink"></div>
+                        <span class="span-last">СТАНДАРТ</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color blue"></div>
+                        <span class="span-last">СТАНДАРТ+</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color red"></div>
+                        <span class="span-last">Boot Camp</span>
                     </div>
                 </div>
             </div>
-            <div class="legend">
-                <div class="legend-item">
-                    <div class="legend-color pink"></div>
-                    <span class="span-last">СТАНДАРТ</span>
-                </div>
-                <div class="legend-item">
-                    <div class="legend-color blue"></div>
-                    <span class="span-last">СТАНДАРТ+</span>
-                </div>
-                <div class="legend-item">
-                    <div class="legend-color red"></div>
-                    <span class="span-last">Boot Camp</span>
-                </div>
-            </div>
-
         </div>
-    </div>
-</section>
-<script src="js/profprice-reveal.js" defer></script>
-<script src="js/script.js" defer></script>
+    </section>
+
+    <script src="js/profprice-reveal.js" defer></script>
+    <script src="js/script.js" defer></script>
 </body>
 </html>
-
