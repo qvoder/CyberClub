@@ -16,8 +16,15 @@ body {
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    background: linear-gradient(270deg, rgba(98, 0, 175, 0) 0%, rgba(30, 0, 68, 0.9) 100%), 
-                url("../img/bauman.png") center/cover no-repeat;
+    background: linear-gradient(
+            to right,
+            rgba(30, 0, 68, 0) 0%,
+            rgba(30, 0, 68, 0) 22%,
+            rgba(30, 0, 68, 0.22) 44%,
+            rgba(30, 0, 68, 0.72) 70%,
+            rgba(98, 0, 175, 0.2) 100%
+        ),
+        url("../img/bauman.png") center/cover no-repeat;
 }
 
 
@@ -111,7 +118,7 @@ body {
     max-width: 1600px;
     display: flex;
     justify-content: center;
-    padding: 0 20px;
+    padding: 0 20px 0 140px;
 }
 
 .zones__border-box {
@@ -250,6 +257,8 @@ body {
     display: flex;
     align-items: center; 
     justify-content: center;
+    padding: 0 20px 0 140px;
+    box-sizing: border-box;
 }
 
 .gallery-slider {
@@ -425,7 +434,7 @@ body {
 .offers__container {
     max-width: 1420px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 20px 0 140px;
 }
 
 .offers__title {
@@ -516,7 +525,16 @@ body {
 .contacts__container {
     max-width: 1420px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 20px 0 140px;
+}
+
+@media (max-width: 992px) {
+    .zones__container,
+    .gallery__container-1920,
+    .offers__container,
+    .contacts__container {
+        padding-left: 20px;
+    }
 }
 
 .contacts__row {
