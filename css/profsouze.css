@@ -31,7 +31,7 @@ body {
     align-items: center;
     width: 100%;
     max-width: 1440px;
-    padding: 0 40px 0 120px;
+    padding: 0 40px 0 var(--nav-content-pad, 100px);
 }
 
 .hero__header {
@@ -116,7 +116,7 @@ body {
     max-width: 1600px;
     display: flex;
     justify-content: center;
-    padding: 0 20px 0 140px;
+    padding: 0 20px 0 var(--nav-content-pad, 100px);
 }
 
 .zones__border-box {
@@ -251,7 +251,7 @@ body {
     display: flex;
     align-items: center; 
     justify-content: center;
-    padding: 0 20px 0 140px;
+    padding: 0 20px 0 var(--nav-content-pad, 100px);
     box-sizing: border-box;
 }
 
@@ -428,7 +428,7 @@ body {
 .offers__container {
     max-width: 1420px;
     margin: 0 auto;
-    padding: 0 20px 0 140px;
+    padding: 0 20px 0 var(--nav-content-pad, 100px);
 }
 
 .offers__title {
@@ -519,7 +519,7 @@ body {
 .contacts__container {
     max-width: 1420px;
     margin: 0 auto;
-    padding: 0 20px 0 140px;
+    padding: 0 20px 0 var(--nav-content-pad, 100px);
 }
 
 @media (max-width: 992px) {

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Магазин — КИБЕРТЕКА</title>
+    <meta name="description" content="Снеки, напитки и горячие блюда в компьютерном клубе Кибертека. Закажи прямо с сайта.">
+    <link rel="icon" href="img/icon.svg" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main-nav.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/shop.css">
+</head>
+<body class="shop-page">
+
+    <nav class="main-nav" aria-label="Навигация">
+        <div class="main-nav__list">
+            <a href="index.html" class="main-nav__link">Главная</a>
+            <a href="bauman.html#zony" class="main-nav__link">Зоны</a>
+            <a href="profbauman.html" class="main-nav__link">Цены</a>
+            <a href="bauman.html#foto" class="main-nav__link">Фото</a>
+            <a href="bauman.html#akcii" class="main-nav__link">Акции</a>
+            <a href="shop.html" class="main-nav__link shop-nav-active" aria-current="page">Магазин</a>
+            <a href="bauman.html#kontakty" class="main-nav__link">Контакты</a>
+        </div>
+    </nav>
+
+    <section class="shop-hero" id="glavnaya">
+        <header class="shop-header">
+            <button type="button" class="shop-btn shop-btn--primary shop-cart-trigger" id="btn-open-cart" aria-expanded="false">
+                Корзина
+                <span class="shop-cart-trigger__badge" id="cart-badge" hidden>0</span>
+            </button>
+        </header>
+        <div class="shop-hero__inner">
+            <div class="shop-hero__header">
+                <img src="img/icon.svg" alt="КИБЕРТЕКА" class="shop-hero__logo" width="86" height="86">
+                <div class="shop-hero__title-group">
+                    <p class="shop-hero__label">Не выходя с места</p>
+                    <h1 class="shop-hero__heading">Магазин <span>Кибертеки</span></h1>
+                </div>
+            </div>
+            <p class="shop-hero__text">Снеки, напитки и горячие блюда — выбери филиал в корзине и оформи заказ.</p>
+        </div>
+    </section>
+
+    <main class="shop-main" id="catalog">
+        <p class="shop-loading" id="shop-loading">Загрузка каталога…</p>
+        <p class="shop-error" id="shop-error" hidden></p>
+        <div id="categories-root" aria-live="polite"></div>
+    </main>
+
+    <div class="shop-overlay" id="cart-overlay" aria-hidden="true"></div>
+    <aside class="shop-cart" id="shop-cart" aria-label="Корзина">
+        <div class="shop-cart__head">
+            <h2 class="shop-cart__title">Корзина</h2>
+            <button type="button" class="shop-cart__close" id="btn-close-cart" aria-label="Закрыть">&times;</button>
+        </div>
+
+        <div class="shop-cart__club">
+            <p class="shop-cart__club-label">Забрать заказ в клубе</p>
+            <div class="shop-club-options" role="radiogroup" aria-label="Выбор филиала">
+                <label class="shop-club-option">
+                    <input type="radio" name="shop-club" value="bauman" checked>
+                    <span class="shop-club-option__box">
+                        <strong>Бауманская</strong>
+                        <small>Спартаковская 21</small>
+                    </span>
+                </label>
+                <label class="shop-club-option">
+                    <input type="radio" name="shop-club" value="profsouz">
+                    <span class="shop-club-option__box">
+                        <strong>Профсоюзная</strong>
+                        <small>Профсоюзная 22/10к1</small>
+                    </span>
+                </label>
+            </div>
+        </div>
+
+        <div class="shop-cart__items" id="cart-items"></div>
+        <div class="shop-cart__foot">
+            <div class="shop-cart__total">
+                <span>Итого</span>
+                <strong id="cart-total">0 ₽</strong>
+            </div>
+            <button type="button" class="shop-btn shop-btn--primary" id="btn-checkout">Оплатить</button>
+        </div>
+    </aside>
+
+    <div class="shop-modal" id="modal-product" role="dialog" aria-modal="true" aria-labelledby="product-modal-title" aria-hidden="true">
+        <div class="shop-modal__box shop-modal__box--product">
+            <button type="button" class="shop-modal__close" id="btn-close-product" aria-label="Закрыть">&times;</button>
+            <div class="shop-product-modal" id="product-modal-body" hidden></div>
+        </div>
+    </div>
+
+    <div class="shop-modal" id="modal-checkout" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+        <div class="shop-modal__box">
+            <div id="modal-checkout-form">
+                <h3 class="shop-modal__title" id="modal-title">Оплата</h3>
+                <p class="shop-modal__text">Симуляция оплаты — данные никуда не отправляются.</p>
+                <p class="shop-modal__club-line" id="checkout-club-line"></p>
+                <div class="shop-form-grid">
+                    <div class="shop-field shop-field--full">
+                        <label for="pay-name">Имя на карте</label>
+                        <input type="text" id="pay-name" placeholder="IVAN IVANOV" autocomplete="cc-name">
+                    </div>
+                    <div class="shop-field shop-field--full">
+                        <label for="pay-card">Номер карты</label>
+                        <input type="text" id="pay-card" inputmode="numeric" maxlength="19" placeholder="0000 0000 0000 0000" autocomplete="cc-number">
+                    </div>
+                </div>
+                <div class="shop-modal__actions">
+                    <button type="button" class="shop-btn shop-btn--ghost" id="btn-cancel-pay">Отмена</button>
+                    <button type="button" class="shop-btn shop-btn--primary" id="btn-confirm-pay">Оплатить <span id="pay-amount">0 ₽</span></button>
+                </div>
+            </div>
+            <div id="modal-checkout-success" hidden>
+                <div class="shop-modal__success-icon" aria-hidden="true">✓</div>
+                <h3 class="shop-modal__title shop-modal__title--center">Оплачено!</h3>
+                <p class="shop-modal__text shop-modal__text--center" id="success-message"></p>
+                <button type="button" class="shop-btn shop-btn--primary shop-modal__btn-full" id="btn-success-close">Отлично</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="shop-toast" id="shop-toast" role="status" aria-live="polite"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/shop.js"></script>
+</body>
+</html>

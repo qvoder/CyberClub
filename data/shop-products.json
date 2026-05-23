@@ -1,0 +1,166 @@
+{
+  "version": 2,
+  "updated": "2026-05-23",
+  "products": [
+    {
+      "id": "snacks-01",
+      "category": "snacks",
+      "name": "Lay's Classic",
+      "price": 120,
+      "description": "Картофельные чипсы",
+      "details": "Хрустящие чипсы с солью — классика для долгой сессии.",
+      "weight": "140 г",
+      "image": "img/shop/1.webp"
+    },
+    {
+      "id": "snacks-02",
+      "category": "snacks",
+      "name": "Lay's Рифлёные",
+      "price": 120,
+      "description": "Рифлёные чипсы",
+      "details": "Рифлёная фактура, насыщенный вкус — удобно делить с друзьями за соседним ПК.",
+      "weight": "140 г",
+      "image": ""
+    },
+    {
+      "id": "snacks-03",
+      "category": "snacks",
+      "name": "Pringles Original",
+      "price": 185,
+      "description": "Чипсы в тубе",
+      "details": "Оригинальный вкус в фирменной тубе — меньше крошек на клавиатуре.",
+      "weight": "165 г",
+      "image": ""
+    },
+    {
+      "id": "snacks-04",
+      "category": "snacks",
+      "name": "Сырные палочки",
+      "price": 95,
+      "description": "Солёный снек",
+      "details": "Сырный вкус, плотная текстура — быстрый перекус между раундами.",
+      "weight": "60 г",
+      "image": ""
+    },
+    {
+      "id": "drinks-01",
+      "category": "drinks",
+      "name": "Coca-Cola 0.5",
+      "price": 110,
+      "description": "Газировка",
+      "details": "Классическая Coca-Cola в холоде — освежает и бодрит.",
+      "weight": "0.5 л",
+      "image": ""
+    },
+    {
+      "id": "drinks-02",
+      "category": "drinks",
+      "name": "Coca-Cola Zero 0.5",
+      "price": 110,
+      "description": "Без сахара",
+      "details": "Вкус колы без сахара — если следишь за калориями.",
+      "weight": "0.5 л",
+      "image": ""
+    },
+    {
+      "id": "drinks-03",
+      "category": "drinks",
+      "name": "Sprite 0.5",
+      "price": 105,
+      "description": "Лимон-лайм",
+      "details": "Лёгкий цитрусовый вкус, хорошо сочетается с снеками.",
+      "weight": "0.5 л",
+      "image": ""
+    },
+    {
+      "id": "drinks-04",
+      "category": "drinks",
+      "name": "Fanta 0.5",
+      "price": 105,
+      "description": "Апельсин",
+      "details": "Сочный апельсиновый вкус — сладко и ярко.",
+      "weight": "0.5 л",
+      "image": ""
+    },
+    {
+      "id": "drinks-05",
+      "category": "drinks",
+      "name": "Вода 0.5",
+      "price": 60,
+      "description": "Негазированная",
+      "details": "Чистая питьевая вода — must-have на любой сессии.",
+      "weight": "0.5 л",
+      "image": ""
+    },
+    {
+      "id": "drinks-06",
+      "category": "drinks",
+      "name": "Вода газ. 0.5",
+      "price": 65,
+      "description": "Газированная",
+      "details": "Лёгкая газировка — освежает между катками.",
+      "weight": "0.5 л",
+      "image": ""
+    },
+    {
+      "id": "drinks-07",
+      "category": "drinks",
+      "name": "Сок яблоко 0.33",
+      "price": 120,
+      "description": "100% сок",
+      "details": "Натуральный яблочный сок без газа.",
+      "weight": "0.33 л",
+      "image": ""
+    },
+    {
+      "id": "drinks-08",
+      "category": "drinks",
+      "name": "Сок апельсин 0.33",
+      "price": 130,
+      "description": "100% сок",
+      "details": "Сочный апельсин — витамин C в бутылке.",
+      "weight": "0.33 л",
+      "image": ""
+    },
+    {
+      "id": "hot-01",
+      "category": "hot",
+      "name": "Пицца Маргарита",
+      "price": 390,
+      "description": "30 см, томаты, моцарелла",
+      "details": "Тонкое тесто, томатный соус и моцарелла. Подаётся горячей 10–15 минут после заказа.",
+      "weight": "450 г",
+      "image": ""
+    },
+    {
+      "id": "hot-02",
+      "category": "hot",
+      "name": "Пицца Пепперони",
+      "price": 450,
+      "description": "30 см, острая колбаса",
+      "details": "Классическая пепперони с сыром — сытно на всю команду или одного героя.",
+      "weight": "480 г",
+      "image": ""
+    },
+    {
+      "id": "hot-03",
+      "category": "hot",
+      "name": "Чизбургер",
+      "price": 280,
+      "description": "Говядина, сыр, соус",
+      "details": "Сочная котлета, плавленый сыр, свежий салат и фирменный соус в булке.",
+      "weight": "220 г",
+      "image": ""
+    },
+    {
+      "id": "hot-04",
+      "category": "hot",
+      "name": "Двойной бургер",
+      "price": 360,
+      "description": "Две котлеты",
+      "details": "Две говяжьи котлеты, двойной сыр — для длинной ночной сессии.",
+      "weight": "310 г",
+      "image": ""
+    }
+  ]
+}

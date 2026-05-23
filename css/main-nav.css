@@ -1,0 +1,94 @@
+/* Боковое меню — компактно под 7 пунктов */
+:root {
+    --nav-rail-w: 88px;
+    --nav-content-pad: calc(var(--nav-rail-w) + 12px);
+}
+
+.main-nav {
+    position: fixed;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: var(--nav-rail-w);
+    height: auto;
+    max-height: 92vh;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    backdrop-filter: none;
+    outline: none;
+}
+
+.main-nav__list {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    pointer-events: auto;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+.main-nav__link {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 1;
+    color: rgba(255, 255, 255, 0.55);
+    text-decoration: none;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+    outline: none;
+}
+
+.main-nav__link:hover {
+    color: #ffffff;
+    text-shadow: 0 0 20px #ffffff, 0 0 40px #a855f7;
+    transform: scale(1.06);
+}
+
+.main-nav__link.active,
+.main-nav__link.prices-active,
+.main-nav__link.shop-nav-active {
+    color: #ffffff;
+    font-weight: 700;
+    text-shadow: 0 0 25px #ffffff, 0 0 50px #ffffff, 0 0 80px #a855f7;
+}
+
+.main-nav__link:focus-visible {
+    color: #ffffff;
+    text-shadow: 0 0 18px #ffffff, 0 0 36px #a855f7;
+}
+
+@media (max-width: 992px) {
+    .main-nav {
+        display: none;
+    }
+}
+
+@media (max-height: 820px) {
+    .main-nav__list {
+        gap: 20px;
+    }
+
+    .main-nav__link {
+        font-size: 18px;
+    }
+}
+
+@media (max-height: 680px) {
+    .main-nav__list {
+        gap: 14px;
+    }
+
+    .main-nav__link {
+        font-size: 16px;
+    }
+}
