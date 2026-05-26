@@ -815,7 +815,8 @@ body {
 
 @media (max-width: 380px) {
     .tariffs-grid {
-        grid-template-columns: 172px !important;
+        /* На ультра-узком экране сохраняем 2 колонки как у характеристик */
+        grid-template-columns: 172px 172px !important;
     }
 
     .tariffs-grid--ps5-trio .tariff-card:nth-child(3) {

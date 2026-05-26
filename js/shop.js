@@ -1,6 +1,3 @@
-/**
- * КИБЕРТЕКА — магазин: каталог из data/shop-products.json, корзина, выбор клуба, оплата
- */
 (function () {
     'use strict';
 
@@ -49,9 +46,9 @@
         const el = $('#shop-toast');
         if (!el) return;
         el.textContent = msg;
-        el.classList.add('shop-toast--show');
+        el.classList.add('shop__toast--show');
         clearTimeout(toast._t);
-        toast._t = setTimeout(() => el.classList.remove('shop-toast--show'), 2800);
+        toast._t = setTimeout(() => el.classList.remove('shop__toast--show'), 2800);
     }
 
     function pluralItems(n) {
@@ -79,19 +76,19 @@
         if (src) {
             return `<img class="${className}" src="${escapeAttr(src)}" alt="${escapeAttr(product.name)}" loading="lazy" decoding="async">`;
         }
-        return `<div class="${className} shop-thumb-placeholder"><img src="img/icon.svg" alt=""></div>`;
+        return `<div class="${className} shop__thumb-placeholder"><img src="img/icon.svg" alt=""></div>`;
     }
 
     function cardCartControlsHtml(productId) {
         const qty = cartState.items[productId] || 0;
         if (qty <= 0) {
-            return `<button type="button" class="shop-card__add" data-card-plus="${escapeAttr(productId)}" aria-label="В корзину">+</button>`;
+            return `<button type="button" class="shop__card-add" data-card-plus="${escapeAttr(productId)}" aria-label="В корзину">+</button>`;
         }
         return `
-            <div class="shop-card__cart" data-card-controls="${escapeAttr(productId)}">
-                <button type="button" class="shop-card__cart-btn" data-card-minus="${escapeAttr(productId)}" aria-label="Убрать одну">−</button>
-                <span class="shop-card__cart-qty">${qty}</span>
-                <button type="button" class="shop-card__cart-btn" data-card-plus="${escapeAttr(productId)}" aria-label="Добавить ещё">+</button>
+            <div class="shop__card-cart" data-card-controls="${escapeAttr(productId)}">
+                <button type="button" class="shop__card-cart-btn" data-card-minus="${escapeAttr(productId)}" aria-label="Убрать одну">−</button>
+                <span class="shop__card-cart-qty">${qty}</span>
+                <button type="button" class="shop__card-cart-btn" data-card-plus="${escapeAttr(productId)}" aria-label="Добавить ещё">+</button>
             </div>
         `;
     }
@@ -99,13 +96,13 @@
     function modalCartButtonHtml(productId) {
         const qty = cartState.items[productId] || 0;
         if (qty <= 0) {
-            return `<button type="button" class="shop-btn shop-btn--primary" data-card-plus="${escapeAttr(productId)}">В корзину</button>`;
+            return `<button type="button" class="shop__btn shop__btn--primary" data-card-plus="${escapeAttr(productId)}">В корзину</button>`;
         }
         return `
-            <div class="shop-card__cart shop-card__cart--modal">
-                <button type="button" class="shop-card__cart-btn" data-card-minus="${escapeAttr(productId)}" aria-label="Убрать одну">−</button>
-                <span class="shop-card__cart-qty">${qty}</span>
-                <button type="button" class="shop-card__cart-btn" data-card-plus="${escapeAttr(productId)}" aria-label="Добавить ещё">+</button>
+            <div class="shop__card-cart shop__card-cart--modal">
+                <button type="button" class="shop__card-cart-btn" data-card-minus="${escapeAttr(productId)}" aria-label="Убрать одну">−</button>
+                <span class="shop__card-cart-qty">${qty}</span>
+                <button type="button" class="shop__card-cart-btn" data-card-plus="${escapeAttr(productId)}" aria-label="Добавить ещё">+</button>
             </div>
         `;
     }
@@ -167,22 +164,24 @@
     }
 
     function updateCartBadge() {
-        const badge = $('#cart-badge');
         const n = cartCount();
-        if (!badge) return;
-        badge.hidden = n <= 0;
-        badge.textContent = String(n);
+
+        /* Обновляем все бейджи (FAB + если есть кнопка в header) */
+        $$('[id^="cart-badge"]').forEach((badge) => {
+            badge.hidden = n <= 0;
+            badge.textContent = String(n);
+        });
     }
 
     function updateAllCardQtyUI() {
-        $$('.shop-card').forEach((card) => {
+        $$('.shop__card').forEach((card) => {
             const id = card.dataset.id;
             if (!id) return;
             const qty = cartState.items[id] || 0;
-            card.classList.toggle('shop-card--in-cart', qty > 0);
-            const footer = card.querySelector('.shop-card__footer');
+            card.classList.toggle('shop__card--in-cart', qty > 0);
+            const footer = card.querySelector('.shop__card-footer');
             if (!footer) return;
-            const priceEl = footer.querySelector('.shop-card__price');
+            const priceEl = footer.querySelector('.shop__card-price');
             if (!priceEl) return;
             footer.innerHTML = priceEl.outerHTML + cardCartControlsHtml(id);
         });
@@ -229,7 +228,7 @@
     function buildProductCard(product) {
         const qty = cartState.items[product.id] || 0;
         const article = document.createElement('article');
-        article.className = 'shop-card' + (qty > 0 ? ' shop-card--in-cart' : '');
+        article.className = 'shop__card' + (qty > 0 ? ' shop__card--in-cart' : '');
         article.dataset.id = product.id;
         article.setAttribute('role', 'button');
         article.setAttribute('tabindex', '0');
@@ -237,18 +236,18 @@
 
         const src = productImageSrc(product);
         const imgInner = src
-            ? `<img class="shop-card__img" src="${escapeAttr(src)}" alt="${escapeAttr(product.name)}" loading="lazy" decoding="async">`
-            : `<div class="shop-card__placeholder" aria-hidden="true"><img src="img/icon.svg" alt=""></div>`;
+            ? `<img class="shop__card-img" src="${escapeAttr(src)}" alt="${escapeAttr(product.name)}" loading="lazy" decoding="async">`
+            : `<div class="shop__card-placeholder" aria-hidden="true"><img src="img/icon.svg" alt=""></div>`;
 
         article.innerHTML = `
-            <div class="shop-card__img-wrap">
+            <div class="shop__card-img-wrap">
                 ${imgInner}
             </div>
-            <div class="shop-card__body">
-                <h3 class="shop-card__name">${escapeHtml(product.name)}</h3>
-                <p class="shop-card__desc">${escapeHtml(product.description || '')}</p>
-                <div class="shop-card__footer">
-                    <p class="shop-card__price">${formatPrice(product.price)}</p>
+            <div class="shop__card-body">
+                <h3 class="shop__card-name">${escapeHtml(product.name)}</h3>
+                <p class="shop__card-desc">${escapeHtml(product.description || '')}</p>
+                <div class="shop__card-footer">
+                    <p class="shop__card-price">${formatPrice(product.price)}</p>
                     ${cardCartControlsHtml(product.id)}
                 </div>
             </div>
@@ -261,7 +260,7 @@
         if (src) {
             return `<img src="${escapeAttr(src)}" alt="${escapeAttr(product.name)}">`;
         }
-        return `<div class="shop-thumb-placeholder"><img src="img/icon.svg" alt=""></div>`;
+        return `<div class="shop__thumb-placeholder"><img src="img/icon.svg" alt=""></div>`;
     }
 
     function openProductModal(productId) {
@@ -279,22 +278,22 @@
         metaParts.push(escapeHtml(catTitle));
 
         body.innerHTML = `
-            <div class="shop-product-modal">
-                <div class="shop-product-modal__media">${renderProductModalMedia(product)}</div>
-                <div class="shop-product-modal__body">
-                    <p class="shop-product-modal__cat" id="product-modal-title">${escapeHtml(catTitle)}</p>
-                    <h3 class="shop-product-modal__name">${escapeHtml(product.name)}</h3>
-                    <p class="shop-product-modal__meta">${metaParts.join(' · ')}</p>
-                    <p class="shop-product-modal__desc">${escapeHtml(productDetails(product))}</p>
-                    <div class="shop-product-modal__footer">
-                        <p class="shop-product-modal__price">${formatPrice(product.price)}</p>
+            <div class="shop__product-modal">
+                <div class="shop__product-modal-media">${renderProductModalMedia(product)}</div>
+                <div class="shop__product-modal-body">
+                    <p class="shop__product-modal-cat" id="product-modal-title">${escapeHtml(catTitle)}</p>
+                    <h3 class="shop__product-modal-name">${escapeHtml(product.name)}</h3>
+                    <p class="shop__product-modal-meta">${metaParts.join(' · ')}</p>
+                    <p class="shop__product-modal-desc">${escapeHtml(productDetails(product))}</p>
+                    <div class="shop__product-modal-footer">
+                        <p class="shop__product-modal-price">${formatPrice(product.price)}</p>
                         <div id="product-modal-cart-slot">${modalCartButtonHtml(product.id)}</div>
                     </div>
                 </div>
             </div>
         `;
         body.removeAttribute('hidden');
-        modal.classList.add('shop-modal--open');
+        modal.classList.add('shop__modal--open');
         modal.setAttribute('aria-hidden', 'false');
         document.body.classList.add('shop-modal-open');
     }
@@ -303,7 +302,7 @@
         openProductId = null;
         const modal = $('#modal-product');
         const body = $('#product-modal-body');
-        modal?.classList.remove('shop-modal--open');
+        modal?.classList.remove('shop__modal--open');
         modal?.setAttribute('aria-hidden', 'true');
         if (body) {
             body.innerHTML = '';
@@ -321,13 +320,14 @@
         destroyCategorySwipers();
         if (!MOBILE_SLIDER_MQ.matches || typeof Swiper === 'undefined') return;
 
-        $$('.shop-swiper').forEach((el) => {
-            const wrap = el.closest('.shop-catalog__slider');
-            const prev = wrap?.querySelector('.shop-swiper__prev');
-            const next = wrap?.querySelector('.shop-swiper__next');
+        $$('.shop__swiper').forEach((el) => {
+            const wrap = el.closest('.shop__catalog-slider');
+            const prev = wrap?.querySelector('.shop__swiper-prev');
+            const next = wrap?.querySelector('.shop__swiper-next');
+            const slidesPerView = window.innerWidth >= 528 ? 2 : 1;
             categorySwipers.push(
                 new Swiper(el, {
-                    slidesPerView: 'auto',
+                    slidesPerView,
                     spaceBetween: 16,
                     speed: 420,
                     grabCursor: true,
@@ -350,40 +350,40 @@
         CATEGORIES.forEach((cat) => {
             const items = products.filter((p) => p.category === cat.id);
             const section = document.createElement('section');
-            section.className = 'shop-category';
+            section.className = 'shop__category';
             section.id = 'cat-' + cat.id;
             section.style.setProperty('--cat-accent', cat.accent);
 
             section.innerHTML = `
-                <div class="shop-category__head">
-                    <div class="shop-category__title-wrap">
-                        <h2 class="shop-category__title">${escapeHtml(cat.title)}</h2>
-                        <p class="shop-category__count">${items.length} ${pluralItems(items.length)}</p>
+                <div class="shop__category-head">
+                    <div class="shop__category-title-wrap">
+                        <h2 class="shop__category-title">${escapeHtml(cat.title)}</h2>
+                        <p class="shop__category-count">${items.length} ${pluralItems(items.length)}</p>
                     </div>
                 </div>
             `;
 
             if (!items.length) {
                 const empty = document.createElement('p');
-                empty.className = 'shop-empty';
+                empty.className = 'shop__empty';
                 empty.textContent = 'В этой категории пока нет товаров.';
                 section.appendChild(empty);
             } else {
                 const catalog = document.createElement('div');
-                catalog.className = 'shop-catalog';
+                catalog.className = 'shop__catalog';
 
                 const grid = document.createElement('div');
-                grid.className = 'shop-grid shop-catalog__grid';
+                grid.className = 'shop__grid shop__catalog-grid';
 
                 const sliderWrap = document.createElement('div');
-                sliderWrap.className = 'shop-catalog__slider';
+                sliderWrap.className = 'shop__catalog-slider';
                 sliderWrap.innerHTML = `
-                    <div class="swiper shop-swiper" id="shop-swiper-${cat.id}">
+                    <div class="swiper shop__swiper" id="shop-swiper-${cat.id}">
                         <div class="swiper-wrapper"></div>
                     </div>
-                    <div class="shop-swiper__nav">
-                        <button type="button" class="shop-swiper__btn shop-swiper__prev" aria-label="Предыдущие товары">‹</button>
-                        <button type="button" class="shop-swiper__btn shop-swiper__next" aria-label="Следующие товары">›</button>
+                    <div class="shop__swiper-nav">
+                        <button type="button" class="shop__swiper-btn shop__swiper-prev" aria-label="Предыдущие товары">‹</button>
+                        <button type="button" class="shop__swiper-btn shop__swiper-next" aria-label="Следующие товары">›</button>
                     </div>
                 `;
                 const wrapper = sliderWrap.querySelector('.swiper-wrapper');
@@ -434,7 +434,7 @@
         const ids = Object.keys(cartState.items);
         if (!ids.length) {
             container.innerHTML =
-                '<p class="shop-cart__empty">Корзина пуста — нажмите «+» на карточке товара</p>';
+                '<p class="shop__cart-empty">Корзина пуста — нажмите «+» на карточке товара</p>';
             totalEl.textContent = '0 ₽';
             return;
         }
@@ -444,15 +444,15 @@
                 const p = getProduct(id);
                 if (!p) return '';
                 const qty = cartState.items[id];
-                const thumb = renderThumb(p, 'shop-cart-item__img');
+                const thumb = renderThumb(p, 'shop__cart-item-img');
                 return `
-                    <div class="shop-cart-item" data-cart-id="${id}">
+                    <div class="shop__cart-item" data-cart-id="${id}">
                         ${thumb}
                         <div>
-                            <p class="shop-cart-item__name">${escapeHtml(p.name)}</p>
-                            <p class="shop-cart-item__price">${formatPrice(p.price)} × ${qty}</p>
+                            <p class="shop__cart-item-name">${escapeHtml(p.name)}</p>
+                            <p class="shop__cart-item-price">${formatPrice(p.price)} × ${qty}</p>
                         </div>
-                        <div class="shop-qty">
+                        <div class="shop__qty">
                             <button type="button" data-qty-minus="${id}" aria-label="Меньше">−</button>
                             <span>${qty}</span>
                             <button type="button" data-qty-plus="${id}" aria-label="Больше">+</button>
@@ -467,17 +467,17 @@
 
     function openCart() {
         document.body.classList.add('shop-cart-open');
-        $('#shop-cart')?.classList.add('shop-cart--open');
-        $('#cart-overlay')?.classList.add('shop-overlay--open');
-        $('#btn-open-cart')?.setAttribute('aria-expanded', 'true');
+        $('#shop-cart')?.classList.add('shop__cart--open');
+        $('#cart-overlay')?.classList.add('shop__overlay--open');
+        $$('[aria-label="Открыть корзину"]').forEach((b) => b.setAttribute('aria-expanded', 'true'));
         renderCart();
     }
 
     function closeCart() {
         document.body.classList.remove('shop-cart-open');
-        $('#shop-cart')?.classList.remove('shop-cart--open');
-        $('#cart-overlay')?.classList.remove('shop-overlay--open');
-        $('#btn-open-cart')?.setAttribute('aria-expanded', 'false');
+        $('#shop-cart')?.classList.remove('shop__cart--open');
+        $('#cart-overlay')?.classList.remove('shop__overlay--open');
+        $$('[aria-label="Открыть корзину"]').forEach((b) => b.setAttribute('aria-expanded', 'false'));
     }
 
     function openCheckout() {
@@ -496,13 +496,13 @@
         $('#modal-checkout-success')?.setAttribute('hidden', '');
         $('#pay-amount').textContent = formatPrice(cartTotal());
         const modal = $('#modal-checkout');
-        modal?.classList.add('shop-modal--open');
+        modal?.classList.add('shop__modal--open');
         modal?.setAttribute('aria-hidden', 'false');
     }
 
     function closeCheckout() {
         const modal = $('#modal-checkout');
-        modal?.classList.remove('shop-modal--open');
+        modal?.classList.remove('shop__modal--open');
         modal?.setAttribute('aria-hidden', 'true');
     }
 
@@ -556,13 +556,13 @@
     function bindEvents() {
         $('#categories-root')?.addEventListener('click', (e) => {
             if (handleCardCartClick(e)) return;
-            const card = e.target.closest('.shop-card');
+            const card = e.target.closest('.shop__card');
             if (card?.dataset.id) openProductModal(card.dataset.id);
         });
 
         $('#categories-root')?.addEventListener('keydown', (e) => {
             if (e.key !== 'Enter' && e.key !== ' ') return;
-            const card = e.target.closest('.shop-card');
+            const card = e.target.closest('.shop__card');
             if (!card?.dataset.id) return;
             if (e.target.closest('[data-card-plus], [data-card-minus]')) return;
             e.preventDefault();
@@ -595,7 +595,9 @@
             });
         });
 
-        $('#btn-open-cart')?.addEventListener('click', openCart);
+
+        $('#btn-open-cart-fab')?.addEventListener('click', openCart);
+
         $('#btn-close-cart')?.addEventListener('click', closeCart);
         $('#cart-overlay')?.addEventListener('click', closeCart);
         $('#btn-checkout')?.addEventListener('click', openCheckout);

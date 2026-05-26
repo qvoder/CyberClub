@@ -1,0 +1,230 @@
+.burger {
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10001;
+    width: 48px;
+    height: 48px;
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    border-radius: 14px;
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    box-shadow: none;
+    cursor: pointer;
+    padding: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    outline: none;
+    transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.burger:hover {
+    border-color: rgba(168, 85, 247, 0.85);
+    transform: translateY(-1px);
+}
+
+.burger__line {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: #fff;
+    border-radius: 2px;
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+                opacity 0.3s ease;
+}
+
+
+.burger--open .burger__line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.burger--open .burger__line:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+.burger--open .burger__line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+
+.burger-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 10002;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.burger-overlay--open {
+    display: block;
+    opacity: 1;
+}
+
+
+.burger-drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: min(340px, 100vw);
+    height: 100dvh;
+    background: #111;
+    border-left: 2px solid rgba(255, 255, 255, 0.07);
+    z-index: 10003;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1);
+    box-shadow: -12px 0 48px rgba(0, 0, 0, 0.55);
+}
+
+.burger-drawer--open {
+    transform: translateX(0);
+}
+
+
+.burger-drawer__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 24px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    flex-shrink: 0;
+}
+
+.burger-drawer__logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.burger-drawer__logo-img {
+    width: 36px;
+    height: auto;
+}
+
+.burger-drawer__logo-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 900;
+    font-style: italic;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.burger-drawer__close {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: rgba(255, 255, 255, 0.07);
+    color: #fff;
+    font-size: 24px;
+    line-height: 1;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.18s ease;
+    transform: rotate(0deg);
+    transform-origin: center;
+}
+
+.burger-drawer__close:hover {
+    background: rgba(168, 85, 247, 0.25);
+    transform: rotate(45deg);
+}
+
+.burger-drawer__close:active {
+    transform: rotate(90deg);
+}
+
+.burger-drawer__nav {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 24px 20px;
+    overflow-y: auto;
+}
+
+.burger-drawer__link {
+    font-family: 'Inter', sans-serif;
+    font-size: 26px;
+    font-weight: 900;
+    font-style: italic;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: rgba(255, 255, 255, 0.55);
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 12px;
+    width: 100%;
+    text-align: center;
+    transition: color 0.25s ease,
+                background 0.25s ease,
+                text-shadow 0.25s ease;
+}
+
+.burger-drawer__link:hover,
+.burger-drawer__link:focus-visible {
+    color: #fff;
+    background: rgba(168, 85, 247, 0.1);
+    text-shadow: 0 0 18px #fff, 0 0 36px #a855f7;
+    outline: none;
+}
+
+.burger-drawer__link--active {
+    color: #fff;
+    text-shadow: 0 0 20px #fff, 0 0 40px #a855f7;
+}
+
+.burger-drawer__foot {
+    padding: 20px 24px;
+    padding-bottom: max(20px, env(safe-area-inset-bottom));
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    flex-shrink: 0;
+}
+
+.burger-drawer__booking-btn {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    background: #fff;
+    color: #e637b7;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    text-align: center;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.burger-drawer__booking-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(230, 55, 183, 0.35);
+}
+
+@media (max-width: 992px) {
+    .burger {
+        display: flex;
+    }
+}
+
+body.shop-cart-open .burger {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}

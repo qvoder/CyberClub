@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,600;0,900;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main-nav.css">
+    <link rel="stylesheet" href="css/burger-menu.css">
     <link rel="stylesheet" href="css/profprice.css">
     <style>
         body { background-color: #0a0a0a; }
@@ -28,6 +29,34 @@
             <a href="profsouz.html#kontakty" class="main-nav__link" data-section="kontakty">Контакты</a>
         </div>
     </nav>
+
+    <button class="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="burger-drawer">
+        <span class="burger__line"></span>
+        <span class="burger__line"></span>
+        <span class="burger__line"></span>
+    </button>
+    <div class="burger-overlay" aria-hidden="true"></div>
+    <div class="burger-drawer" id="burger-drawer" role="dialog" aria-modal="true" aria-label="Навигация">
+        <div class="burger-drawer__head">
+            <a href="index.html" class="burger-drawer__logo">
+                <img src="img/icon.svg" alt="КИБЕРТЕКА" class="burger-drawer__logo-img">
+                <span class="burger-drawer__logo-title">Кибертека</span>
+            </a>
+            <button class="burger-drawer__close" aria-label="Закрыть меню">&times;</button>
+        </div>
+        <nav class="burger-drawer__nav">
+            <a href="profsouz.html#glavnaya" class="burger-drawer__link">Главная</a>
+            <a href="profsouz.html#zony" class="burger-drawer__link">Зоны</a>
+            <a href="#" class="burger-drawer__link burger-drawer__link--active">Цены</a>
+            <a href="profsouz.html#foto" class="burger-drawer__link">Фото</a>
+            <a href="profsouz.html#akcii" class="burger-drawer__link">Акции</a>
+            <a href="shop.html" class="burger-drawer__link">Магазин</a>
+            <a href="profsouz.html#kontakty" class="burger-drawer__link">Контакты</a>
+        </nav>
+        <div class="burger-drawer__foot">
+            <a href="profsouz.html" class="burger-drawer__booking-btn" style="text-decoration:none; display:block;">← На главную</a>
+        </div>
+    </div>
 
     <!-- ЗОНА СТАНДАРТ -->
     <section class="cyber-zone" onclick="window.location.href='profstandart.html';">
@@ -500,6 +529,7 @@
     <script src="js/profprice-reveal.js" defer></script>
     <script src="js/script.js" defer></script>
     <script src="js/CeoOptimization.js" defer></script>
+    <script src="js/burger-menu.js" defer></script>
 </body>
 </html>
 

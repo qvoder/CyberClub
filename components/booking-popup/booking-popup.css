@@ -27,33 +27,31 @@
 
 .booking-popup__wrapper {
   position: relative;
-  width: 700px;
-  height: 624px;
-  max-width: calc(100vw - 40px);
+  width: clamp(320px, 90vw, 700px);
+  max-width: calc(100vw - 32px);
   overflow: visible;
   transform: scale(0.95);
   opacity: 0;
-  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1); /* красивая анимация открытия */
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .booking-popup.active .booking-popup__wrapper {
   transform: scale(1);
   opacity: 1;
 }
-.secondstroke_placeholder{
-    font-size: 24px;
-    font-weight: 400;
-    background-color: #030303;
-    border-radius: 10px;
-    border:0;
-    
+
+.secondstroke_placeholder {
+  font-size: 20px;
+  font-weight: 400;
+  background-color: #030303;
+  border-radius: 10px;
+  border: 0;
+  padding: 10px 22px;
 }
+
 .booking-popup__content {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 700px;
-  height: 624px;
+  position: relative;
+  width: 100%;
   background: #111111;
   border-radius: 32px;
   box-shadow: 0px 5px 50px 0px #00000066;
@@ -88,7 +86,6 @@
 
 .booking-popup__inner {
   padding: 38px 45px 35px;
-  height: 100%;
   position: relative;
 }
 
@@ -96,9 +93,8 @@
   font-size: 28px;
   font-weight: 700;
   color: #fff;
-  margin:26px 0px 34px 46px;
+  margin: 26px 0 34px 46px;
 }
-
 
 .booking-popup__police {
   position: absolute;
@@ -149,90 +145,110 @@
   transition: all 0.30s ease;
 }
 
-input{
+input {
   background-color: #030303;
   border-radius: 10px;
-  height:50px;
+  height: 50px;
   font-weight: 400;
-  color:#ffffff;
+  color: #ffffff;
   font-family: "Inter", sans-serif;
   font-size: 20px;
   border: 0;
-  padding:10px 22px;
+  padding: 10px 22px;
+  box-sizing: border-box;
 }
-input::placeholder{
+
+input::placeholder {
   font-weight: 400;
   font-family: "Inter", sans-serif;
-  color:#ffffff;
+  color: #ffffff;
   opacity: 0.2;
-  font-size: 24px;
-  
+  font-size: 20px;
 }
-.form__container{
-  max-width:500px;
-  margin-left:46px;
+
+.form__container {
+  width: 100%;
+  max-width: 500px;
+  margin-left: 46px;
 }
-.name{
-  max-width:210px;
-  margin-right:10px;
+
+.form__firststroke {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
 }
-.date{
-  max-width:105px;
-  margin-right:14px;
+
+.name {
+  flex: 2 1 150px;
+  min-width: 0;
 }
-.time{
-  max-width:105px;
-  
+
+.date {
+  flex: 1 1 100px;
+  min-width: 0;
 }
-.number{
-  height:29px;
+
+.time {
+  flex: 1 1 90px;
+  min-width: 0;
 }
-.form__secondstroke{
-  margin:20px 0px;
+
+.number {
+  height: 29px;
+}
+
+.form__secondstroke {
+  margin: 20px 0;
   max-width: 423px;
   background-color: #03030303;
-  
 }
-.phonenumber{
-  width:394px;
-  margin-bottom:20px;
+
+.phonenumber {
+  width: 100%;
+  max-width: 394px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
 }
-textarea::placeholder{
- 
-  opacity:0.2;
+
+textarea::placeholder {
+  opacity: 0.2;
   color: #ffffff;
   font-weight: 400;
-  font-family: "Inter",sans-serif;
-  font-size: 24px;
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
 }
-textarea{
-  width: 394px;
-  height: 154px;  
-  max-width: 394px;     
-  max-height: 154px;    
+
+textarea {
+  width: 100%;
+  max-width: 394px;
+  height: 154px;
+  max-height: 154px;
   resize: none;
   background-color: #030303;
-  border:0;
-  border-radius:10px;
-  margin-bottom:23px;
-  padding:10px 22px;
+  border: 0;
+  border-radius: 10px;
+  margin-bottom: 23px;
+  padding: 10px 22px;
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  color: #fff;
+  box-sizing: border-box;
 }
-button{
-  width:250px;
-  height:50px;
+
+button {
+  width: 250px;
+  height: 50px;
   background-color: #ffffff;
-  color:#F959C1;
+  color: #F959C1;
   font-weight: 600;
-  font-family: "Inter",sans-serif;
+  font-family: "Inter", sans-serif;
   text-align: center;
-  border:0;
-  border-radius:10px;
-  font-size: 24px;
-  cursor:pointer;
+  border: 0;
+  border-radius: 10px;
+  font-size: 22px;
+  cursor: pointer;
 }
-.secondstroke_placeholder{
-  padding:10px 22px;
-}
+
 
 @media (max-width: 750px) {
   .booking-popup__police {
@@ -242,24 +258,11 @@ button{
   .booking-popup__vector {
     right: 24px;
   }
-
-  .booking-popup__wrapper {
-    width: 100%;
-  }
 }
 
-@media (max-width: 550px) {
-  .booking-popup__content {
-    width: 100%;
-    max-width: 460px;
-    height: auto;
-    min-height: 580px;
-    border-radius: 24px;
-    margin: 20px;
-  }
-
+@media (max-width: 680px) {
   .booking-popup__inner {
-    padding: 32px 24px 40px;
+    padding: 32px 28px 36px;
   }
 
   .booking-popup__title {
@@ -274,33 +277,62 @@ button{
   }
 
   .form__firststroke {
-    display: flex;
+    gap: 10px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .booking-popup__wrapper {
+    max-width: calc(100vw - 20px);
+  }
+
+  .booking-popup__content {
+    border-radius: 20px;
+  }
+
+  .booking-popup__inner {
+    padding: 28px 20px 32px;
+  }
+
+  .booking-popup__title {
+    font-size: 22px;
+    margin: 0 0 22px 0;
+  }
+
+  .form__firststroke {
     flex-direction: column;
-    gap: 14px;
+    gap: 10px;
   }
 
   .name, .date, .time {
-    max-width: 100% !important;
-    width: 110%;
+    flex: none;
+    width: 100%;
+    max-width: 100%;
   }
 
   .form__secondstroke {
     max-width: 100%;
-    margin: 14px 0 20px 0;
-  }
-
-  
-
-  .booking-popup__btn {
-    width: 100%;
-    max-width: 280px;
-    margin: 10px auto 0;
-    display: block;
+    margin: 12px 0 18px 0;
   }
 
   .form__container {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
+  }
+
+  .phonenumber,
+  textarea {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  button,
+  .booking-popup__btn {
+    width: 100%;
+    max-width: 100%;
+    font-size: 18px;
+    margin-top: 8px;
   }
 }
