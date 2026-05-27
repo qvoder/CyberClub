@@ -166,7 +166,6 @@
     function updateCartBadge() {
         const n = cartCount();
 
-        /* Обновляем все бейджи (FAB + если есть кнопка в header) */
         $$('[id^="cart-badge"]').forEach((badge) => {
             badge.hidden = n <= 0;
             badge.textContent = String(n);
