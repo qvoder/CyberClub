@@ -22,6 +22,27 @@
       "weight": "140 г",
       "image": ""
     },
+     {
+      "id": "snacks-01",
+      "category": "snacks",
+      "name": "Lay's Classic",
+      "price": 120,
+      "description": "Картофельные чипсы",
+      "details": "Хрустящие чипсы с солью — классика для долгой сессии.",
+      "weight": "140 г",
+      "image": "img/shop/1.webp"
+    },
+    {
+      "id": "snacks-02",
+      "category": "snacks",
+      "name": "Lay's Рифлёные",
+      "price": 120,
+      "description": "Рифлёные чипсы",
+      "details": "Рифлёная фактура, насыщенный вкус — удобно делить с друзьями за соседним ПК.",
+      "weight": "140 г",
+      "image": ""
+    },
+    
     {
       "id": "snacks-03",
       "category": "snacks",

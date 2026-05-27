@@ -29,7 +29,7 @@ body {
     justify-content: flex-start;
     padding-left: 164px;
     max-width: 800px;
-    min-width: 500px;
+    min-width: 500px;   
     min-height: 100vh;
 }
 
@@ -58,8 +58,6 @@ body {
     text-transform: uppercase;
     letter-spacing: 4px;
 }
-
-
 
 .hero__subtitle {
     font-size: 12px;
@@ -139,10 +137,10 @@ body {
     text-transform: uppercase;
 }
 
-span{
+span {
     font-size: 60px;
-
 }
+
 .cards__btn {
     align-self: flex-start;
     background: transparent;
@@ -164,6 +162,7 @@ span{
 .cards__item--prof { background: linear-gradient(180deg, rgba(107,0,179,0.65), rgba(42,0,85,0.75)); }
 .cards__item--baum { background: linear-gradient(180deg, rgba(0,102,255,0.65), rgba(0,51,102,0.75)); }
 
+
 @media (max-width: 1500px) {
     .hero {
         padding-left: 120px;
@@ -183,7 +182,8 @@ span{
         padding-top: 80px;
         padding-bottom: 80px;
         min-height: auto;
-        align-items: center;        
+        align-items: center;
+        min-width: 0;            
     }
 
     .hero__content {
@@ -199,7 +199,8 @@ span{
     }
 
     .cards {
-        margin-left: 0;
+        margin-left: 0;          
+        flex-shrink: 1;          
         width: 100%;
         max-width: 540px;
         padding: 0 20px;
@@ -213,14 +214,15 @@ span{
     }
 }
 
-@media(max-width:700px){
-    .hero__title{
+@media (max-width: 700px) {
+    .hero__title {
         font-size: 60px;
     }
-    span{
+    span {
         font-size: 40px;
     }
 }
+
 
 @media (max-width: 580px) {
     .hero {
@@ -238,5 +240,24 @@ span{
 
     .cards__item {
         height: 460px;
+    }
+
+
+    .cards__content {
+        padding: 30px 20px 40px;
+    }
+
+
+    .cards__title {
+        font-size: 24px;
+    }
+    .cards__title span {
+        font-size: 36px;
+    }
+
+
+    .cards__btn {
+        font-size: 18px;
+        padding: 8px 20px;
     }
 }
